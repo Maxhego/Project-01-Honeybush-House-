@@ -1,0 +1,1 @@
+const form=document.querySelector('#contact-form');if(form){form.addEventListener('submit',event=>{event.preventDefault();document.querySelector('#notice').textContent='Demo only: your message was not sent or saved.';form.reset();});}

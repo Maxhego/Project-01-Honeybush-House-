@@ -104,7 +104,7 @@ CloudFront can be disabled when the demonstration is complete to stop serving pu
 
 ## Project Status
 
-**Deployed and tested — October 2026**
+**Successfully deployed and tested — October 2026; CloudFront distribution disabled afterward**
 
 This project is part of a five-project AWS cloud engineering portfolio focused on developing practical cloud infrastructure and deployment skills.
 

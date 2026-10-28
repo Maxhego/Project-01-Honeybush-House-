@@ -8,7 +8,7 @@ Honeybush House is a fictional South African tea brand website developed as a ha
 
 The objective was to build a responsive static website, store its files securely in Amazon S3, and distribute the website globally using Amazon CloudFront.
 
-**Live Website:** https://d2f36m657zlp75.cloudfront.net/
+**Deployment URL (currently offline): https://d2f36m657zlp75.cloudfront.net/
 
 ## AWS Services Used
 

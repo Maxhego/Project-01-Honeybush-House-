@@ -1,0 +1,36 @@
+name: Deploy Honeybush House to S3 (manual)
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Configure AWS credentials using OIDC
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: eu-north-1
+      - name: Upload static site files
+        env:
+          BUCKET: ${{ vars.S3_BUCKET_NAME }}
+        run: |
+          test -n "$BUCKET"
+          aws s3 sync . "s3://$BUCKET/" \
+            --exclude "*" \
+            --include "*.html" \
+            --include "*.css" \
+            --include "*.js" \
+            --include "images/*"
+      - name: Invalidate CloudFront cache
+        env:
+          DISTRIBUTION: ${{ vars.CLOUDFRONT_DISTRIBUTION_ID }}
+        run: |
+          test -n "$DISTRIBUTION"
+          aws cloudfront create-invalidation --distribution-id "$DISTRIBUTION" --paths "/*"

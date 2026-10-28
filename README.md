@@ -107,3 +107,20 @@ CloudFront can be disabled when the demonstration is complete to stop serving pu
 **Deployed and tested — October 2026**
 
 This project is part of a five-project AWS cloud engineering portfolio focused on developing practical cloud infrastructure and deployment skills.
+
+
+## Architecture diagram and supporting documentation
+
+- [Architecture diagram](docs/architecture.md) — Mermaid diagram of CloudFront, OAC and private S3
+- [Testing and evidence checklist](docs/testing.md) — manual checks, reported outcomes and screenshot placeholders
+- [Security and cost review](docs/security-and-cost.md) — access controls and budget verification
+- [CloudFormation example](infra/README.md) — educational template for a **new** stack; not deployed
+- [GitHub Actions deployment guide](docs/deployment-automation.md) — optional, manual-only workflow; not yet configured or run
+
+### Repository completeness
+
+The website source code is present. **The `images/` assets are still missing from GitHub**, so a clone will show missing images until those files are uploaded. Some image assets are AI-generated concepts. The contact form is demo-only and does not send messages.
+
+### Deployment and automation status
+
+The existing AWS site was deployed manually using the console. The infrastructure-as-code and GitHub Actions files are **prepared examples**, not proof that an automated deployment has been completed. Running the CloudFormation template would create separate potentially billable resources. The Actions workflow requires an explicitly configured, least-privilege AWS OIDC role and repository variables, and runs only when manually dispatched.

@@ -10,7 +10,7 @@ These are **user-reported results**, not independently recorded automated tests.
 
 **CloudFront is offline; the distribution was disabled after the successful demonstration.** The checklist below is a plan for a future authorized deployment, not a set of tests run during this review. Historical page-load results above remain user-reported. User-supplied desktop screenshots are committed in the [gallery](screenshots/README.md). Their hosting environment is unverified; no automated test results are committed.
 
-Local checks can cover navigation, layout and the demo form once the missing image assets are restored; they cannot verify HTTPS delivery or private S3 access. For each executed check, record date, environment, expected result, actual result and a capture or output link. Leave unexecuted checks pending.
+Local checks can cover navigation, layout and the demo form using the included `images/` assets; they cannot verify HTTPS delivery or private S3 access. For each executed check, record date, environment, expected result, actual result and a capture or output link. Leave unexecuted checks pending.
 
 See the [portfolio evidence checklist](portfolio-evidence.md) for prioritized captures and provenance requirements.
 
@@ -29,7 +29,7 @@ See the [portfolio evidence checklist](portfolio-evidence.md) for prioritized ca
 
 ## Screenshots to add
 Save sanitized screenshots under `docs/screenshots/`:
-1. Desktop homepage and product page
+1. Desktop homepage and product page — [supplied](screenshots/README.md)
 2. Mobile homepage
 3. S3 Objects list showing `index.html` at bucket root
 4. CloudFront general settings showing origin and default root object
@@ -43,3 +43,7 @@ An initial 403 AccessDenied response was observed when website files were nested
 ## Desktop visual evidence received 30 October 2026
 
 Nine [user-supplied captures](screenshots/README.md) show Home, Story, Teas and Contact with imagery rendered in the visible sections. These are partial desktop views without an address bar. They do not establish navigation behavior, all-image completeness, form submission behavior, mobile layout or AWS security settings. Historical deployment results above remain user-reported.
+
+## Repository asset check — 30 October 2026
+
+The `images/` folder contains 20 original website image files. Every `images/` reference in the four HTML pages and `style.css` resolves to a committed file. This checks repository paths only; it is not a browser rendering or AWS deployment test.

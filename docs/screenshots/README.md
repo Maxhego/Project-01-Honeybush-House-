@@ -35,4 +35,4 @@ Supplied on 30 October 2026. These nine unmodified captures show the four websit
 ![Contact hero and form](contact-desktop.png)
 ![Demo contact form](contact-form.png)
 
-The original website image assets are still required in `images/` for a complete source checkout. Screenshots do not replace those assets.
+The 20 original website image files are included in [`images/`](../../images/). Every image reference in the HTML and CSS matches a committed file. These screenshots provide a visual overview alongside the source assets.

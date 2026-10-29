@@ -1,16 +1,16 @@
 # Portfolio evidence checklist
 
-Review date: 30 October 2026. The repository contains source, architecture documentation, an example CloudFormation template and a manual-only Actions workflow. Original image assets are missing. Nine user-supplied desktop screenshots were subsequently added to the [gallery](screenshots/README.md); hosting environment and capture time are unverified. The Actions run history returned zero runs at review.
+Review date: 30 October 2026. The repository contains source, architecture documentation, an example CloudFormation template and a manual-only Actions workflow. The 20 original website image files are included in `images/`; all image references in the four HTML pages and CSS resolve to committed files. Nine user-supplied desktop screenshots were subsequently added to the [gallery](screenshots/README.md); hosting environment and capture time are unverified. The Actions run history returned zero runs at review.
 
 The CloudFront demo remains offline. Do not enable it merely to make the README appear complete.
 
 ## Priority additions
 
-Suggested paths below are future filenames, not links to existing evidence.
+Backticked screenshot and note paths below are suggested future filenames; linked files and folders already exist.
 
 | Priority | Missing item | Suggested path or link | What it establishes |
 |---|---|---|---|
-| 1 | Original website images and asset-origin note | `images/` and `images/README.md` | A clone can reproduce the visual site; distinguish AI-generated concepts from other assets and record usage rights |
+| Included; provenance note pending | 20 original website image files | [`images/`](../images/) | All HTML/CSS image paths resolve; add an asset-origin note to distinguish AI-generated concepts and document sources/usage rights |
 | Supplied | Desktop captures covering all four pages | [Screenshot gallery](screenshots/README.md) | Visible page appearance; does not establish AWS deployment provenance |
 | 1 | Mobile capture with viewport recorded | `docs/screenshots/home-mobile.png` | Visible layout at the stated size; does not establish all-device compatibility |
 | 2 | S3 Objects capture | `docs/screenshots/s3-root-objects.png` | Correct root-level keys, including `index.html`, illustrating the troubleshooting resolution |

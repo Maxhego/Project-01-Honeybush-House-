@@ -22,7 +22,7 @@ User-supplied desktop capture, received 30 October 2026; hosting environment unv
 | Learning focus | Object paths, private origin access, CDN configuration, cache invalidation and troubleshooting |
 | Contribution | Guided AWS configuration, upload and browser testing; website code prepared with AI assistance |
 | Evidence level | Deployment results are user-reported; desktop captures are committed; hosting environment and HTTP checks remain unverified |
-| Current limits | Image assets are missing from GitHub; contact form is demo-only; no checkout or backend |
+| Current limits | Contact form is demo-only; no checkout or backend |
 
 This is the first project in a five-project beginner AWS cloud engineering portfolio. Its value is the deployment process and troubleshooting decisions, supported by source code and documentation.
 
@@ -69,7 +69,7 @@ The [test record](docs/testing.md) separates reported historical outcomes from c
 
 The highest-priority additions are:
 
-1. Restore the original `images/` assets with filenames matching the HTML and CSS, plus an asset-origin note.
+1. The 20 original website image files are included in [`images/`](images/), with all HTML and CSS image references matched to committed files. Add an asset-origin note documenting sources and usage rights.
 2. Desktop captures are now available in the [screenshot gallery](docs/screenshots/README.md). Add a mobile capture with viewport details; preserve clear environment labels.
 3. Add dated deployment evidence: S3 root objects, CloudFront origin/OAC and root object, and a completed invalidation.
 4. Add recorded HTTPS/HTTP and private-S3 checks, with dates and expected versus actual results, if historical records exist or an authorized future deployment is tested.
@@ -80,7 +80,7 @@ See the [prioritized evidence checklist](docs/portfolio-evidence.md) for filenam
 
 Clone this repository, open its directory in VS Code, and open `index.html` in a browser (or use a local static server).
 
-The page structure and styling are available now, but **images will be broken until the missing assets are restored**. The contact form only displays a demo message and does not send messages. Local inspection does not verify AWS configuration.
+The website source includes its 20 image assets in `images/`. Keep this folder alongside the HTML, CSS and JavaScript when previewing locally. The contact form only displays a demo message and does not send messages. Local inspection does not verify AWS configuration.
 
 ## Supporting material and automation status
 
@@ -102,4 +102,4 @@ The existing deployment was completed through the AWS Console. The template and 
 - How cached responses affect deployment troubleshooting.
 - How to distinguish a successful manual demonstration from reproducible, recorded validation.
 
-Next priorities are evidence and asset completeness, followed by testing the prepared automation in a separately reviewed deployment. Custom domains, monitoring and a serverless contact form are future extensions.
+Next priorities are deployment evidence and asset provenance, followed by testing the prepared automation in a separately reviewed deployment. Custom domains, monitoring and a serverless contact form are future extensions.

@@ -17,11 +17,11 @@ flowchart TD
 - **S3 bucket policy** grants `s3:GetObject` only to the CloudFront service principal when the source is the intended distribution ARN.
 - **Default root object** is `index.html`.
 
-## Existing deployment
+## Historical deployment — currently offline
 - S3 region: `eu-north-1`
 - S3 bucket: `honeybush-house-project01-001`
-- CloudFront URL: https://d2f36m657zlp75.cloudfront.net/
-- The deployed resources were configured manually in the AWS Console. The template in `infra/` is **an example for future reproducibility**, not a record of how the live resources were created.
+- Historical CloudFront address: `https://d2f36m657zlp75.cloudfront.net/` — offline; distribution disabled after testing.
+- The deployed resources were configured manually in the AWS Console. The template in `infra/` is **an example for future reproducibility**, not a record of how the manually deployed resources were created.
 
 ## Important
 Do not turn off S3 Block Public Access to troubleshoot CloudFront. Check the origin type, OAC, bucket policy, object paths and cache invalidation first.

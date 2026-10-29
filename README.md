@@ -1,126 +1,105 @@
-# AWS Project 01 — Honeybush House
+# Honeybush House — AWS cloud engineering case study
 
-**Deploying a Static Website Using Amazon S3 and Amazon CloudFront**
+A four-page website for a fictional South African tea brand, deployed manually with **Amazon S3, CloudFront and Origin Access Control (OAC)**.
 
-## Project Overview
+**Outcome:** The guided deployment was reported successful in October 2026 after resolving an `AccessDenied` error caused by incorrect S3 object paths. **The CloudFront demo is offline; the distribution was disabled after testing.**
 
-Honeybush House is a fictional South African tea brand website developed as a hands-on AWS cloud engineering portfolio project.
+Historical deployment address: `https://d2f36m657zlp75.cloudfront.net/` — retained as a reference, not a live demo link. See the [offline-status commit](https://github.com/Maxhego/Project-01-Honeybush-House-/commit/8c7af193b347e74964fb585abcc7b3482a2c8af0).
 
-The objective was to build a responsive static website, store its files securely in Amazon S3, and distribute the website globally using Amazon CloudFront.
+## Website preview
 
-**Deployment URL (currently offline): https://d2f36m657zlp75.cloudfront.net/
+![Honeybush House desktop homepage](docs/screenshots/home-desktop.png)
 
-## AWS Services Used
+User-supplied desktop capture, received 30 October 2026; hosting environment unverified. [View all four pages and capture notes](docs/screenshots/README.md). The CloudFront demo remains offline.
 
-| Service | Purpose |
+## At a glance
+
+| Item | Detail |
 |---|---|
-| Amazon S3 | Stores HTML, CSS, JavaScript, and image files |
-| Amazon CloudFront | Delivers website content through a global content delivery network (CDN) |
-| AWS IAM | Provides AWS identity and access management capabilities |
-| CloudFront Origin Access Control (OAC) | Allows CloudFront to securely retrieve files from the private S3 bucket |
+| Goal | Serve a static website over HTTPS while keeping the S3 origin private |
+| Scope | Home, Our Story, Our Teas and Contact; HTML, CSS, JavaScript and image assets |
+| Deployment | AWS Console; S3 in `eu-north-1`; CloudFront for delivery |
+| Learning focus | Object paths, private origin access, CDN configuration, cache invalidation and troubleshooting |
+| Contribution | Guided AWS configuration, upload and browser testing; website code prepared with AI assistance |
+| Evidence level | Deployment results are user-reported; desktop captures are committed; hosting environment and HTTP checks remain unverified |
+| Current limits | Contact form is demo-only; no checkout or backend |
 
-## Website Features
+This is the first project in a five-project beginner AWS cloud engineering portfolio. Its value is the deployment process and troubleshooting decisions, supported by source code and documentation.
 
-- Responsive website design
-- Four pages: Home, Our Story, Our Teas, and Contact
-- Tea product imagery and branding
-- HTML, CSS, and JavaScript
-- HTTPS delivery through CloudFront
-- Private S3 origin
+## Architecture and decisions
 
-## Architecture
+| Component | Responsibility and reason |
+|---|---|
+| Private Amazon S3 bucket | Stores site objects without exposing the bucket directly to public readers |
+| Amazon CloudFront | Provides the public HTTPS entry point and caches static content at edge locations |
+| Origin Access Control | Signs origin requests from CloudFront to S3 |
+| S3 bucket policy | Permits reads by the CloudFront service principal for the intended distribution |
+| AWS IAM | Controls administrative access; IAM is not a step in the visitor request path |
 
-Visitor → Amazon CloudFront → Private Amazon S3 Bucket
+A browser requests a page through CloudFront. On a cache miss, CloudFront retrieves the object from the regular S3 REST origin using OAC. S3 Block Public Access remains enabled. The default root object is `index.html`; other pages use explicit `.html` paths.
 
-Visitors request the website through CloudFront. CloudFront retrieves content from the S3 bucket when necessary and caches files at edge locations to improve delivery performance.
+See the [architecture diagram and component details](docs/architecture.md). These describe the documented design, not independently verified current AWS settings.
 
-Origin Access Control restricts direct public access to the S3 bucket while allowing the configured CloudFront distribution to retrieve website files.
+## Implementation and deployment outcome
 
-## Implementation Steps
+1. Prepared the four-page static website and its assets.
+2. Created the S3 bucket and uploaded the site through the AWS Console.
+3. Configured CloudFront with the private S3 origin, OAC and `index.html` as the default root object.
+4. Corrected the uploaded object paths and requested a CloudFront cache invalidation.
+5. Tested the four pages through the CloudFront domain; successful loading was reported during the guided deployment.
+6. Disabled the CloudFront distribution after the demonstration.
 
-1. Developed the website using HTML, CSS, and JavaScript.
-2. Created an Amazon S3 bucket in the `eu-north-1` AWS Region.
-3. Uploaded the website files and images to the bucket.
-4. Kept S3 Block Public Access enabled.
-5. Created a CloudFront distribution using the S3 bucket as its origin.
-6. Enabled private bucket access for CloudFront.
-7. Configured `index.html` as the default root object.
-8. Corrected the S3 file structure so website files were located at the bucket root.
-9. Created a CloudFront cache invalidation.
-10. Tested the website pages through the CloudFront domain.
+Disabling CloudFront does not establish that all AWS resources were deleted or that billing stopped. S3 storage and previously accrued charges may remain. No cost total or budget alert is verified in this repository.
 
-## Challenges and Troubleshooting
+## Troubleshooting: AccessDenied after upload
 
-### AccessDenied Error
+**Symptom:** CloudFront returned `AccessDenied` instead of the homepage.
 
-During deployment, CloudFront returned an `AccessDenied` error.
+**Finding:** The site files were nested under `Honeybush-House-Project01-FRESH/`, while the distribution expected `index.html` at the bucket root.
 
-Investigation showed that the website files had initially been uploaded inside a parent folder rather than directly into the S3 bucket root.
+**Change:** Uploaded the website contents at the correct root paths and invalidated the CloudFront cache.
 
-**Resolution:** Uploaded the website files and images using the correct S3 object paths and invalidated the CloudFront cache.
+**Reported result:** The homepage and the other three pages loaded successfully.
 
-### CloudFront Caching
+**Lesson:** Check object keys and origin configuration before changing access controls. A 403 alone does not prove a permission problem. Keeping the bucket private was part of the design.
 
-CloudFront can temporarily serve cached responses after website files are changed.
+## Validation and evidence
 
-**Resolution:** Used the CloudFront Invalidations feature to request fresh content.
+The [test record](docs/testing.md) separates reported historical outcomes from checks that still need evidence. The offline endpoint cannot demonstrate current website operation.
 
-## Testing
+The highest-priority additions are:
 
-The following pages were tested through the CloudFront website:
+1. The 20 original website image files are included in [`images/`](images/), with all HTML and CSS image references matched to committed files. Add an asset-origin note documenting sources and usage rights.
+2. Desktop captures are now available in the [screenshot gallery](docs/screenshots/README.md). Add a mobile capture with viewport details; preserve clear environment labels.
+3. Add dated deployment evidence: S3 root objects, CloudFront origin/OAC and root object, and a completed invalidation.
+4. Add recorded HTTPS/HTTP and private-S3 checks, with dates and expected versus actual results, if historical records exist or an authorized future deployment is tested.
 
-- Home — `index.html`
-- Our Story — `story.html`
-- Our Teas — `teas.html`
-- Contact — `contact.html`
+See the [prioritized evidence checklist](docs/portfolio-evidence.md) for filenames, captions and missing links. The supplied desktop screenshots show page appearance; they do not verify AWS configuration. No performance scores or successful automation runs are claimed here.
 
-The website was confirmed to load successfully after correcting the S3 object structure.
+## Inspect the source locally
 
-## Skills Demonstrated
+Clone this repository, open its directory in VS Code, and open `index.html` in a browser (or use a local static server).
 
-- Amazon S3 object storage
-- Static website deployment
-- CloudFront CDN configuration
-- Secure S3 origin access
-- Basic AWS access control
-- Troubleshooting HTTP access errors
-- Cache invalidation
-- AWS Console navigation
-- HTML, CSS, and JavaScript deployment
+The website source includes its 20 image assets in `images/`. Keep this folder alongside the HTML, CSS and JavaScript when previewing locally. The contact form only displays a demo message and does not send messages. Local inspection does not verify AWS configuration.
 
-## Cost Management
+## Supporting material and automation status
 
-The project uses CloudFront pay-as-you-go billing and Amazon S3 storage.
+| Material | Status |
+|---|---|
+| [Architecture](docs/architecture.md) | Documented manually deployed design |
+| [Testing](docs/testing.md) | Reported outcomes and pending verification |
+| [Security and cost](docs/security-and-cost.md) | Controls to verify and cost considerations |
+| [Portfolio evidence](docs/portfolio-evidence.md) | Prioritized gaps and capture guidance |
+| [CloudFormation example](infra/README.md) | Not deployed or account-validated; creates a separate new stack |
+| [GitHub Actions guide](docs/deployment-automation.md) | Manual-dispatch example, not configured or tested; no runs found at review |
 
-CloudFront can be disabled when the demonstration is complete to stop serving public traffic. S3 storage and other applicable AWS charges may continue until the relevant resources are removed.
+The existing deployment was completed through the AWS Console. The template and workflow demonstrate preparation for future reproducibility, not a completed infrastructure-as-code deployment or proven CI/CD pipeline.
 
-## Future Improvements
+## What this project taught me
 
-- Add a custom domain name
-- Automate deployment with GitHub Actions
-- Add infrastructure as code using AWS CloudFormation or Terraform
-- Improve monitoring and cost alerts
-- Add a functional contact form using serverless AWS services
+- How S3 object keys affect website delivery through CloudFront.
+- How a public CDN can serve content from a private origin.
+- How cached responses affect deployment troubleshooting.
+- How to distinguish a successful manual demonstration from reproducible, recorded validation.
 
-## Project Status
-
-**Successfully deployed and tested — October 2026; CloudFront distribution disabled afterward**
-
-This project is part of a five-project AWS cloud engineering portfolio focused on developing practical cloud infrastructure and deployment skills.
-
-
-## Architecture diagram and supporting documentation
-
-- [Architecture diagram](docs/architecture.md) — Mermaid diagram of CloudFront, OAC and private S3
-- [Testing and evidence checklist](docs/testing.md) — manual checks, reported outcomes and screenshot placeholders
-- [Security and cost review](docs/security-and-cost.md) — access controls and budget verification
-- [CloudFormation example](infra/README.md) — educational template for a **new** stack; not deployed
-- [GitHub Actions deployment guide](docs/deployment-automation.md) — optional, manual-only workflow; not yet configured or run
-
-### Repository completeness
-
-The website source code is present. **The `images/` assets are still missing from GitHub**, so a clone will show missing images until those files are uploaded. Some image assets are AI-generated concepts. The contact form is demo-only and does not send messages.
-
-### Deployment and automation status
-
-The existing AWS site was deployed manually using the console. The infrastructure-as-code and GitHub Actions files are **prepared examples**, not proof that an automated deployment has been completed. Running the CloudFormation template would create separate potentially billable resources. The Actions workflow requires an explicitly configured, least-privilege AWS OIDC role and repository variables, and runs only when manually dispatched.
+Next priorities are deployment evidence and asset provenance, followed by testing the prepared automation in a separately reviewed deployment. Custom domains, monitoring and a serverless contact form are future extensions.

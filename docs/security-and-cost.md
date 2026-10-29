@@ -1,5 +1,7 @@
 # Security and cost review
 
+The CloudFront demo is offline following the reported successful deployment. Current account settings, resource deletion and billing have not been independently verified. See the [evidence checklist](portfolio-evidence.md).
+
 ## Security configuration to verify
 - S3 Block Public Access: enabled
 - S3 Object Ownership: bucket owner enforced
@@ -10,7 +12,7 @@
 - No AWS credentials, tokens or private keys in this repository
 
 ## Cost considerations
-The live deployment uses CloudFront pay-as-you-go and Amazon S3. A displayed **$0/month** is not a guarantee of zero usage charges. S3 storage and requests, CloudFront traffic and requests, and other optional services can incur charges.
+The historical deployment used CloudFront pay-as-you-go and Amazon S3. A displayed **$0/month** is not a guarantee of zero usage charges. S3 storage and requests, CloudFront traffic and requests, and other optional services can incur charges.
 
 Suggested manual steps:
 1. Open AWS Billing and Cost Management.

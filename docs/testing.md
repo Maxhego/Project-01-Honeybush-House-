@@ -6,7 +6,15 @@
 
 These are **user-reported results**, not independently recorded automated tests.
 
-## Reproducible manual test checklist
+## Current status
+
+**CloudFront is offline; the distribution was disabled after the successful demonstration.** The checklist below is a plan for a future authorized deployment, not a set of tests run during this review. Historical page-load results above remain user-reported. No automated test results or screenshot files are committed.
+
+Local checks can cover navigation, layout and the demo form once the missing image assets are restored; they cannot verify HTTPS delivery or private S3 access. For each executed check, record date, environment, expected result, actual result and a capture or output link. Leave unexecuted checks pending.
+
+See the [portfolio evidence checklist](portfolio-evidence.md) for prioritized captures and provenance requirements.
+
+## Pending manual test checklist (requires an active deployment)
 - [ ] Home: https://d2f36m657zlp75.cloudfront.net/
 - [ ] Story: https://d2f36m657zlp75.cloudfront.net/story.html
 - [ ] Teas: https://d2f36m657zlp75.cloudfront.net/teas.html

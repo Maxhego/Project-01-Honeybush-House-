@@ -8,7 +8,7 @@ These are **user-reported results**, not independently recorded automated tests.
 
 ## Current status
 
-**CloudFront is offline; the distribution was disabled after the successful demonstration.** The checklist below is a plan for a future authorized deployment, not a set of tests run during this review. Historical page-load results above remain user-reported. No automated test results or screenshot files are committed.
+**CloudFront is offline; the distribution was disabled after the successful demonstration.** The checklist below is a plan for a future authorized deployment, not a set of tests run during this review. Historical page-load results above remain user-reported. User-supplied desktop screenshots are committed in the [gallery](screenshots/README.md). Their hosting environment is unverified; no automated test results are committed.
 
 Local checks can cover navigation, layout and the demo form once the missing image assets are restored; they cannot verify HTTPS delivery or private S3 access. For each executed check, record date, environment, expected result, actual result and a capture or output link. Leave unexecuted checks pending.
 
@@ -39,3 +39,7 @@ Save sanitized screenshots under `docs/screenshots/`:
 
 ## Troubleshooting note
 An initial 403 AccessDenied response was observed when website files were nested under `Honeybush-House-Project01-FRESH/`. Moving the website contents to the bucket root and completing a CloudFront invalidation resolved the issue according to the user's browser test.
+
+## Desktop visual evidence received 30 October 2026
+
+Nine [user-supplied captures](screenshots/README.md) show Home, Story, Teas and Contact with imagery rendered in the visible sections. These are partial desktop views without an address bar. They do not establish navigation behavior, all-image completeness, form submission behavior, mobile layout or AWS security settings. Historical deployment results above remain user-reported.

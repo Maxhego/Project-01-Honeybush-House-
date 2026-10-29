@@ -6,6 +6,12 @@ A four-page website for a fictional South African tea brand, deployed manually w
 
 Historical deployment address: `https://d2f36m657zlp75.cloudfront.net/` — retained as a reference, not a live demo link. See the [offline-status commit](https://github.com/Maxhego/Project-01-Honeybush-House-/commit/8c7af193b347e74964fb585abcc7b3482a2c8af0).
 
+## Website preview
+
+![Honeybush House desktop homepage](docs/screenshots/home-desktop.png)
+
+User-supplied desktop capture, received 30 October 2026; hosting environment unverified. [View all four pages and capture notes](docs/screenshots/README.md). The CloudFront demo remains offline.
+
 ## At a glance
 
 | Item | Detail |
@@ -15,7 +21,7 @@ Historical deployment address: `https://d2f36m657zlp75.cloudfront.net/` — reta
 | Deployment | AWS Console; S3 in `eu-north-1`; CloudFront for delivery |
 | Learning focus | Object paths, private origin access, CDN configuration, cache invalidation and troubleshooting |
 | Contribution | Guided AWS configuration, upload and browser testing; website code prepared with AI assistance |
-| Evidence level | Deployment results are user-reported; screenshots and recorded HTTP checks are not yet committed |
+| Evidence level | Deployment results are user-reported; desktop captures are committed; hosting environment and HTTP checks remain unverified |
 | Current limits | Image assets are missing from GitHub; contact form is demo-only; no checkout or backend |
 
 This is the first project in a five-project beginner AWS cloud engineering portfolio. Its value is the deployment process and troubleshooting decisions, supported by source code and documentation.
@@ -64,11 +70,11 @@ The [test record](docs/testing.md) separates reported historical outcomes from c
 The highest-priority additions are:
 
 1. Restore the original `images/` assets with filenames matching the HTML and CSS, plus an asset-origin note.
-2. Add desktop homepage, product-page and mobile screenshots. Label local captures as local previews, not historical AWS proof.
+2. Desktop captures are now available in the [screenshot gallery](docs/screenshots/README.md). Add a mobile capture with viewport details; preserve clear environment labels.
 3. Add dated deployment evidence: S3 root objects, CloudFront origin/OAC and root object, and a completed invalidation.
 4. Add recorded HTTPS/HTTP and private-S3 checks, with dates and expected versus actual results, if historical records exist or an authorized future deployment is tested.
 
-See the [prioritized evidence checklist](docs/portfolio-evidence.md) for filenames, captions and missing links. No screenshots, performance scores or successful automation runs are claimed here.
+See the [prioritized evidence checklist](docs/portfolio-evidence.md) for filenames, captions and missing links. The supplied desktop screenshots show page appearance; they do not verify AWS configuration. No performance scores or successful automation runs are claimed here.
 
 ## Inspect the source locally
 

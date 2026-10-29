@@ -1,6 +1,6 @@
 # Portfolio evidence checklist
 
-Review date: 30 October 2026. The repository contains source, architecture documentation, an example CloudFormation template and a manual-only Actions workflow. It contains no image assets or screenshot files, and the Actions run history returned zero runs at review.
+Review date: 30 October 2026. The repository contains source, architecture documentation, an example CloudFormation template and a manual-only Actions workflow. Original image assets are missing. Nine user-supplied desktop screenshots were subsequently added to the [gallery](screenshots/README.md); hosting environment and capture time are unverified. The Actions run history returned zero runs at review.
 
 The CloudFront demo remains offline. Do not enable it merely to make the README appear complete.
 
@@ -11,7 +11,7 @@ Suggested paths below are future filenames, not links to existing evidence.
 | Priority | Missing item | Suggested path or link | What it establishes |
 |---|---|---|---|
 | 1 | Original website images and asset-origin note | `images/` and `images/README.md` | A clone can reproduce the visual site; distinguish AI-generated concepts from other assets and record usage rights |
-| 1 | Desktop homepage and product-page captures | `docs/screenshots/home-desktop.png`, `teas-desktop.png` | Recruiters can see the project while the demo is offline |
+| Supplied | Desktop captures covering all four pages | [Screenshot gallery](screenshots/README.md) | Visible page appearance; does not establish AWS deployment provenance |
 | 1 | Mobile capture with viewport recorded | `docs/screenshots/home-mobile.png` | Visible layout at the stated size; does not establish all-device compatibility |
 | 2 | S3 Objects capture | `docs/screenshots/s3-root-objects.png` | Correct root-level keys, including `index.html`, illustrating the troubleshooting resolution |
 | 2 | CloudFront origin, OAC and default root object | `docs/screenshots/cloudfront-origin.png`, `cloudfront-root-object.png` | Documented connection between the distribution and private S3 origin |
@@ -28,7 +28,7 @@ For each capture, record the date, environment (historical AWS deployment, curre
 
 Use existing historical captures if available. A screenshot made locally today must not be presented as proof of the October AWS deployment. If historical evidence cannot be recovered, leave the result labeled user-reported. Do not fabricate before/after screenshots or HTTP outputs.
 
-After adding real files, embed the homepage screenshot near the README summary and link the other captures from the test record. Add only links that resolve to committed files. A short captioned walkthrough video can be useful, but is optional.
+The homepage screenshot is embedded in the README and all captures are linked from the test record. Add only links that resolve to committed files. A short captioned walkthrough video can be useful, but is optional.
 
 ## Links to retain or add
 

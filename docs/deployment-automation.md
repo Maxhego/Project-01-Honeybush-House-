@@ -3,7 +3,7 @@
 A **manual-only** workflow is provided at `.github/workflows/deploy.yml`. It does not run automatically on pushes. It has **not been executed or tested**.
 
 ## Prerequisites
-1. The repository's `images/` folder now includes the 20 original website image files. Review the assets and filenames before any future deployment.
+1. The repository's `images/` folder now includes the 20 website image files. Review the assets and filenames before any future deployment.
 2. Create a GitHub OIDC identity provider and a narrowly scoped AWS IAM role. Restrict the role trust policy to this exact repository and the intended branch.
 3. Grant the role only the required S3 object upload/list permissions for the intended bucket and `cloudfront:CreateInvalidation` for the intended distribution.
 4. Add GitHub Actions repository variables (Settings → Secrets and variables → Actions → Variables):

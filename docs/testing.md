@@ -46,4 +46,4 @@ Nine [user-supplied captures](screenshots/README.md) show Home, Story, Teas and 
 
 ## Repository asset check — 30 October 2026
 
-The `images/` folder contains 20 original website image files. Every `images/` reference in the four HTML pages and `style.css` resolves to a committed file. This checks repository paths only; it is not a browser rendering or AWS deployment test.
+The `images/` folder contains 20 website image files. Every `images/` reference in the four HTML pages and `style.css` resolves to a committed file. This checks repository paths only; it is not a browser rendering or AWS deployment test.

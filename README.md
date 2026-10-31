@@ -6,6 +6,10 @@ A four-page website for a fictional South African tea brand, deployed manually w
 
 Historical deployment address: `https://d2f36m657zlp75.cloudfront.net/` — retained as a reference, not a live demo link. See the [offline-status commit](https://github.com/Maxhego/Project-01-Honeybush-House-/commit/8c7af193b347e74964fb585abcc7b3482a2c8af0).
 
+## Fictional project disclaimer
+
+Honeybush House is a fictional website created solely to demonstrate AWS cloud deployment and web development skills. It is not an operating tea business, and no products are offered for sale. The project's purpose is educational portfolio work, with no intention to copy another business or imply affiliation, sponsorship or endorsement. The fictional name, products and prices are illustrative. This statement does not establish trade mark clearance or replace any permission required for third-party material; see the [asset-provenance record](docs/asset-provenance.md) for documented sources and remaining limitations.
+
 ## Website preview
 
 The current source uses eight geometric SVG illustrations created with AI assistance on 31 October 2026. Earlier raster images and screenshots containing them were removed from the current version because their origins and usage rights were unverified. [Read the asset record and remaining cleanup items](docs/asset-provenance.md). These replacements have not been redeployed to AWS; the CloudFront demo remains reported offline.

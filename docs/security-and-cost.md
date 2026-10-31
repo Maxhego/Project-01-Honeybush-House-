@@ -22,3 +22,7 @@ Suggested manual steps:
 5. If deleting resources later, confirm retention needs and remove resources deliberately.
 
 **Not verified:** Whether a budget alert exists in the AWS account. Budget alerts do not automatically shut off services.
+
+## Asset publication review
+
+See [asset provenance](asset-provenance.md). The current tree uses replacement SVGs; retired raster files and screenshots may remain in Git history and external deployment copies. Keep the demonstration disabled until destination objects and affected caches have been reviewed. Source removal is not a legal clearance or proof of remote cleanup.

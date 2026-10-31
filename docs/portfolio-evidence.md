@@ -1,6 +1,6 @@
 # Portfolio evidence checklist
 
-Review date: 30 October 2026. The repository contains source, architecture documentation, an example CloudFormation template and a manual-only Actions workflow. The 20 original website image files are included in `images/`; all image references in the four HTML pages and CSS resolve to committed files. Nine user-supplied desktop screenshots were subsequently added to the [gallery](screenshots/README.md); hosting environment and capture time are unverified. The Actions run history returned zero runs at review.
+Review date: 31 October 2026. The source now uses eight AI-assisted SVG illustrations. Twenty raster assets and nine screenshots containing them were removed from the current tree because their origins/usage rights were unverified. See [asset provenance](asset-provenance.md) for the inventory and unresolved historical/external copies. The prior Actions review found zero runs; no deployment was run during this remediation.
 
 The CloudFront demo remains offline. Do not enable it merely to make the README appear complete.
 
@@ -10,8 +10,8 @@ Backticked screenshot and note paths below are suggested future filenames; linke
 
 | Priority | Missing item | Suggested path or link | What it establishes |
 |---|---|---|---|
-| Included; provenance note pending | 20 original website image files | [`images/`](../images/) | All HTML/CSS image paths resolve; add an asset-origin note to distinguish AI-generated concepts and document sources/usage rights |
-| Supplied | Desktop captures covering all four pages | [Screenshot gallery](screenshots/README.md) | Visible page appearance; does not establish AWS deployment provenance |
+| Remediated in current tree; external cleanup pending | Replacement SVG assets and provenance record | [Asset provenance](asset-provenance.md) | Records creation and removal; does not clear prior publication or historical copies |
+| Pending refresh | Desktop captures covering all four replacement pages | [Capture notes](screenshots/README.md) | Earlier supplied captures withdrawn; new local previews must be labelled |
 | 1 | Mobile capture with viewport recorded | `docs/screenshots/home-mobile.png` | Visible layout at the stated size; does not establish all-device compatibility |
 | 2 | S3 Objects capture | `docs/screenshots/s3-root-objects.png` | Correct root-level keys, including `index.html`, illustrating the troubleshooting resolution |
 | 2 | CloudFront origin, OAC and default root object | `docs/screenshots/cloudfront-origin.png`, `cloudfront-root-object.png` | Documented connection between the distribution and private S3 origin |
@@ -28,7 +28,7 @@ For each capture, record the date, environment (historical AWS deployment, curre
 
 Use existing historical captures if available. A screenshot made locally today must not be presented as proof of the October AWS deployment. If historical evidence cannot be recovered, leave the result labeled user-reported. Do not fabricate before/after screenshots or HTTP outputs.
 
-The homepage screenshot is embedded in the README and all captures are linked from the test record. Add only links that resolve to committed files. A short captioned walkthrough video can be useful, but is optional.
+The README no longer embeds historical captures. Fresh previews are pending. Add only links that resolve to committed files. A short captioned walkthrough video can be useful, but is optional.
 
 ## Links to retain or add
 
@@ -40,4 +40,4 @@ The homepage screenshot is embedded in the README and all captures are linked fr
 
 ## Review boundary
 
-This review inspected repository documentation, site references, infrastructure/workflow source and GitHub Actions run history. It did not access the AWS account, reactivate resources, rerun deployment tests, validate the template in AWS or measure performance. The existing architecture diagram describes intent and reported implementation; it is not deployment evidence.
+The earlier review inspected repository documentation, site references, infrastructure/workflow source and GitHub Actions run history. The 31 October remediation reviewed source references and removed unverified assets from the current tree. It did not access the AWS account, reactivate resources, rerun deployment tests, validate the template in AWS or measure performance. The existing architecture diagram describes intent and reported implementation; it is not deployment evidence.

@@ -1,9 +1,7 @@
 Honeybush House image assets
 
-Files:
-- honeybush-packaging.jpg: original packaging reference
-- honeybush-packaging-hero.webp: web-optimized packaging image
-- honeybush-packaging-detail.webp: central packaging detail crop
+The current site uses eight geometric SVG illustrations created with AI assistance on 31 October 2026. Keep images/ beside the HTML/CSS files.
 
-Place the images folder beside index.html, then reference images/honeybush-packaging-hero.webp in HTML.
-For S3 upload, preserve the images/ folder path.
+The former packaging reference and other raster files were removed from the current version because their source and usage rights were unverified. Do not restore or upload them without documented permission.
+
+See docs/asset-provenance.md for current assets, historical inventory and unresolved Git/AWS/cache copies. This change has not been deployed to AWS.

@@ -8,7 +8,7 @@ These are **user-reported results**, not independently recorded automated tests.
 
 ## Current status
 
-**CloudFront is offline; the distribution was disabled after the successful demonstration.** The checklist below is a plan for a future authorized deployment, not a set of tests run during this review. Historical page-load results above remain user-reported. User-supplied desktop screenshots are committed in the [gallery](screenshots/README.md). Their hosting environment is unverified; no automated test results are committed.
+**CloudFront is offline; the distribution was disabled after the successful demonstration.** The checklist below is a plan for a future authorized deployment, not a set of tests run during this review. Historical page-load results above remain user-reported. Earlier user-supplied desktop screenshots have been withdrawn from the current tree because they reproduce imagery with unverified rights; see [capture notes](screenshots/README.md). Their hosting environment is unverified; no automated test results are committed.
 
 Local checks can cover navigation, layout and the demo form using the included `images/` assets; they cannot verify HTTPS delivery or private S3 access. For each executed check, record date, environment, expected result, actual result and a capture or output link. Leave unexecuted checks pending.
 
@@ -29,7 +29,7 @@ See the [portfolio evidence checklist](portfolio-evidence.md) for prioritized ca
 
 ## Screenshots to add
 Save sanitized screenshots under `docs/screenshots/`:
-1. Desktop homepage and product page — [supplied](screenshots/README.md)
+1. Fresh desktop homepage and product page using replacement SVGs — pending; label as local unless actually hosted
 2. Mobile homepage
 3. S3 Objects list showing `index.html` at bucket root
 4. CloudFront general settings showing origin and default root object
@@ -42,8 +42,17 @@ An initial 403 AccessDenied response was observed when website files were nested
 
 ## Desktop visual evidence received 30 October 2026
 
-Nine [user-supplied captures](screenshots/README.md) show Home, Story, Teas and Contact with imagery rendered in the visible sections. These are partial desktop views without an address bar. They do not establish navigation behavior, all-image completeness, form submission behavior, mobile layout or AWS security settings. Historical deployment results above remain user-reported.
+Nine user-supplied captures previously showed Home, Story, Teas and Contact. They have been removed from the current tree because they reproduce the retired raster assets; see [historical inventory](screenshots/README.md). They never established AWS settings, HTTPS or complete browser behavior.
 
 ## Repository asset check — 30 October 2026
 
-The `images/` folder contains 20 original website image files. Every `images/` reference in the four HTML pages and `style.css` resolves to a committed file. This checks repository paths only; it is not a browser rendering or AWS deployment test.
+Historical check: the folder contained 20 raster files and site references resolved. That did not establish asset origins or usage rights. On 31 October these files were removed from the current tree and replaced by eight AI-assisted SVG illustrations; see [asset record](asset-provenance.md). The changed version has not been redeployed to AWS. Fresh browser validation and screenshots are separate from the historical deployment report.
+
+## Replacement-source checks — 31 October 2026
+
+- Passed: all 16 image references in the four HTML pages and CSS resolve to the eight replacement SVG files.
+- Passed: all eight SVGs parse as XML and rasterize successfully; a rendered contact sheet was visually inspected.
+- Passed: replacement SVGs contain no scripts, embedded raster images or external resource references.
+- Passed: workflow YAML parses; the manual asset-review input defaults to false and gates the deployment job.
+- Full-page browser layout checks were attempted but could not run because the local Playwright browser executable was unavailable. Fresh desktop/mobile browser checks remain pending.
+- No AWS access, deployment, old-object cleanup, cache invalidation, or Git-history purge was performed.

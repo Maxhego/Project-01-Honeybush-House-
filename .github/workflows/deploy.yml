@@ -1,6 +1,12 @@
 name: Deploy Honeybush House to S3 (manual)
 on:
   workflow_dispatch:
+    inputs:
+      asset_review_complete:
+        description: 'Confirm asset provenance and destination/cache cleanup review is complete'
+        type: boolean
+        required: true
+        default: false
 
 permissions:
   id-token: write
@@ -8,6 +14,7 @@ permissions:
 
 jobs:
   deploy:
+    if: ${{ inputs.asset_review_complete }}
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository

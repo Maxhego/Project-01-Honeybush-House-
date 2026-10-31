@@ -8,9 +8,7 @@ Historical deployment address: `https://d2f36m657zlp75.cloudfront.net/` — reta
 
 ## Website preview
 
-![Honeybush House desktop homepage](docs/screenshots/home-desktop.png)
-
-User-supplied desktop capture, received 30 October 2026; hosting environment unverified. [View all four pages and capture notes](docs/screenshots/README.md). The CloudFront demo remains offline.
+The current source uses eight geometric SVG illustrations created with AI assistance on 31 October 2026. Earlier raster images and screenshots containing them were removed from the current version because their origins and usage rights were unverified. [Read the asset record and remaining cleanup items](docs/asset-provenance.md). These replacements have not been redeployed to AWS; the CloudFront demo remains reported offline.
 
 ## At a glance
 
@@ -21,7 +19,7 @@ User-supplied desktop capture, received 30 October 2026; hosting environment unv
 | Deployment | AWS Console; S3 in `eu-north-1`; CloudFront for delivery |
 | Learning focus | Object paths, private origin access, CDN configuration, cache invalidation and troubleshooting |
 | Contribution | Guided AWS configuration, upload and browser testing; website code prepared with AI assistance |
-| Evidence level | Deployment results are user-reported; desktop captures are committed; hosting environment and HTTP checks remain unverified |
+| Evidence level | Deployment results are user-reported; historical captures were supplied and have been withdrawn from the current tree; hosting environment and HTTP checks remain unverified |
 | Current limits | Contact form is demo-only; no checkout or backend |
 
 This is the first project in a five-project beginner AWS cloud engineering portfolio. Its value is the deployment process and troubleshooting decisions, supported by source code and documentation.
@@ -69,18 +67,18 @@ The [test record](docs/testing.md) separates reported historical outcomes from c
 
 The highest-priority additions are:
 
-1. The 20 original website image files are included in [`images/`](images/), with all HTML and CSS image references matched to committed files. Add an asset-origin note documenting sources and usage rights.
-2. Desktop captures are now available in the [screenshot gallery](docs/screenshots/README.md). Add a mobile capture with viewport details; preserve clear environment labels.
+1. [Asset provenance and remediation](docs/asset-provenance.md) now records the eight replacement SVGs and the 20 retired raster files. Historical Git and external deployment copies remain unresolved; this is not legal clearance.
+2. Earlier desktop captures were withdrawn because they reproduce the retired images. Add fresh desktop and mobile previews of the replacement source, with date, viewport and environment labels; see [capture notes](docs/screenshots/README.md).
 3. Add dated deployment evidence: S3 root objects, CloudFront origin/OAC and root object, and a completed invalidation.
 4. Add recorded HTTPS/HTTP and private-S3 checks, with dates and expected versus actual results, if historical records exist or an authorized future deployment is tested.
 
-See the [prioritized evidence checklist](docs/portfolio-evidence.md) for filenames, captions and missing links. The supplied desktop screenshots show page appearance; they do not verify AWS configuration. No performance scores or successful automation runs are claimed here.
+See the [prioritized evidence checklist](docs/portfolio-evidence.md) for filenames, captions and missing links. The historical desktop captures showed page appearance; they did not verify AWS configuration. No performance scores or successful automation runs are claimed here.
 
 ## Inspect the source locally
 
 Clone this repository, open its directory in VS Code, and open `index.html` in a browser (or use a local static server).
 
-The website source includes its 20 image assets in `images/`. Keep this folder alongside the HTML, CSS and JavaScript when previewing locally. The contact form only displays a demo message and does not send messages. Local inspection does not verify AWS configuration.
+The website source includes eight AI-assisted SVG illustrations in `images/`. Keep this folder alongside the HTML, CSS and JavaScript when previewing locally. The contact form only displays a demo message and does not send messages. Local inspection does not verify AWS configuration.
 
 ## Supporting material and automation status
 
@@ -89,6 +87,7 @@ The website source includes its 20 image assets in `images/`. Keep this folder a
 | [Architecture](docs/architecture.md) | Documented manually deployed design |
 | [Testing](docs/testing.md) | Reported outcomes and pending verification |
 | [Security and cost](docs/security-and-cost.md) | Controls to verify and cost considerations |
+| [Asset provenance](docs/asset-provenance.md) | Replacement creation record, retired-asset inventory and unresolved historical/external copies |
 | [Portfolio evidence](docs/portfolio-evidence.md) | Prioritized gaps and capture guidance |
 | [CloudFormation example](infra/README.md) | Not deployed or account-validated; creates a separate new stack |
 | [GitHub Actions guide](docs/deployment-automation.md) | Manual-dispatch example, not configured or tested; no runs found at review |
@@ -102,4 +101,4 @@ The existing deployment was completed through the AWS Console. The template and 
 - How cached responses affect deployment troubleshooting.
 - How to distinguish a successful manual demonstration from reproducible, recorded validation.
 
-Next priorities are deployment evidence and asset provenance, followed by testing the prepared automation in a separately reviewed deployment. Custom domains, monitoring and a serverless contact form are future extensions.
+Next priorities are resolving historical/external asset copies and refreshing local previews, followed by deployment evidence and testing the prepared automation in a separately reviewed deployment. Custom domains, monitoring and a serverless contact form are future extensions.

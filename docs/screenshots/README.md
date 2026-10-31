@@ -1,38 +1,21 @@
-# User-supplied desktop screenshots
+# Capture status and historical inventory
 
-Supplied on 30 October 2026. These nine unmodified captures show the four website pages and their imagery. The browser address bar is absent, so the hosting environment and capture time are unverified. They are visual previews, not proof of CloudFront delivery, HTTPS, private S3 access, mobile behavior or successful form interaction. The CloudFront demo remains offline.
+Updated: 31 October 2026.
 
-| Capture | Original filename | View |
-|---|---|---|
-| [home-desktop](home-desktop.png) | Screenshot 2026-10-30 011714.png | Desktop page section |
-| [home-packaging](home-packaging.png) | Screenshot 2026-10-30 011725.png | Desktop page section |
-| [home-features](home-features.png) | Screenshot 2026-10-30 011735.png | Desktop page section |
-| [story-desktop](story-desktop.png) | Screenshot 2026-10-30 011751.png | Desktop page section |
-| [story-detail](story-detail.png) | Screenshot 2026-10-30 011802.png | Desktop page section |
-| [teas-desktop](teas-desktop.png) | Screenshot 2026-10-30 011816.png | Desktop page section |
-| [teas-products](teas-products.png) | Screenshot 2026-10-30 011828.png | Desktop page section |
-| [contact-desktop](contact-desktop.png) | Screenshot 2026-10-30 011840.png | Desktop page section |
-| [contact-form](contact-form.png) | Screenshot 2026-10-30 011849.png | Desktop page section |
+Nine user-supplied desktop captures were received on 30 October 2026. Their hosting environment and capture time were unverified. They reproduced website images whose origins and usage rights were not established, so the binaries and embeds have been withdrawn from the current version. They may remain in earlier Git history; this is not a purge.
 
-## Home
+| Retired repository filename | Supplied filename |
+| --- | --- |
+| `home-desktop.png` | `Screenshot 2026-10-30 011714.png` |
+| `home-packaging.png` | `Screenshot 2026-10-30 011725.png` |
+| `home-features.png` | `Screenshot 2026-10-30 011735.png` |
+| `story-desktop.png` | `Screenshot 2026-10-30 011751.png` |
+| `story-detail.png` | `Screenshot 2026-10-30 011802.png` |
+| `teas-desktop.png` | `Screenshot 2026-10-30 011816.png` |
+| `teas-products.png` | `Screenshot 2026-10-30 011828.png` |
+| `contact-desktop.png` | `Screenshot 2026-10-30 011840.png` |
+| `contact-form.png` | `Screenshot 2026-10-30 011849.png` |
 
-![Homepage hero and introduction](home-desktop.png)
-![Homepage packaging section](home-packaging.png)
-![Homepage features and footer](home-features.png)
+Fresh desktop and mobile captures of the replacement SVG version are pending. Record date, viewport and local/hosted environment; do not present a new local capture as historical AWS deployment evidence. Check each image for private information and undocumented third-party content before committing.
 
-## Story
-
-![Story hero and inspiration](story-desktop.png)
-![Story experience section](story-detail.png)
-
-## Teas
-
-![Tea collection hero](teas-desktop.png)
-![Four tea product cards](teas-products.png)
-
-## Contact
-
-![Contact hero and form](contact-desktop.png)
-![Demo contact form](contact-form.png)
-
-The 20 original website image files are included in [`images/`](../../images/). Every image reference in the HTML and CSS matches a committed file. These screenshots provide a visual overview alongside the source assets.
+See [asset provenance and residual cleanup](../asset-provenance.md). No current screenshot proves AWS configuration, HTTPS, private S3 access or working automation.

@@ -1,8 +1,10 @@
 # Portfolio evidence checklist
 
-Review date: 30 October 2026. The repository contains source, architecture documentation, an example CloudFormation template and a manual-only Actions workflow. The 20 original website image files are included in `images/`; all image references in the four HTML pages and CSS resolve to committed files. Nine user-supplied desktop screenshots were subsequently added to the [gallery](screenshots/README.md); hosting environment and capture time are unverified. The Actions run history returned zero runs at review.
+Review date: 30 October 2026. The repository contains source, architecture documentation, an example CloudFormation template and a manual-only Actions workflow. The 20 website image files are included in `images/`; all image references in the four HTML pages and CSS resolve to committed files. Nine user-supplied desktop screenshots were subsequently added to the [gallery](screenshots/README.md); hosting environment and capture time are unverified. The Actions run history returned zero runs at review.
 
 The CloudFront demo remains offline. Do not enable it merely to make the README appear complete.
+
+Asset-provenance update: 31 October 2026. The record documents the gap; it does not close source or usage-rights verification.
 
 ## Priority additions
 
@@ -10,7 +12,7 @@ Backticked screenshot and note paths below are suggested future filenames; linke
 
 | Priority | Missing item | Suggested path or link | What it establishes |
 |---|---|---|---|
-| Included; provenance note pending | 20 original website image files | [`images/`](../images/) | All HTML/CSS image paths resolve; add an asset-origin note to distinguish AI-generated concepts and document sources/usage rights |
+| Record added; source/rights verification open | 20 website image files | [Asset-provenance record](asset-provenance.md) and [`images/`](../images/) | All HTML/CSS image paths resolve; per-file inventory distinguishes references from visibility. Creator/source, generation status and usage rights remain unresolved for all 20 images |
 | Supplied | Desktop captures covering all four pages | [Screenshot gallery](screenshots/README.md) | Visible page appearance; does not establish AWS deployment provenance |
 | 1 | Mobile capture with viewport recorded | `docs/screenshots/home-mobile.png` | Visible layout at the stated size; does not establish all-device compatibility |
 | 2 | S3 Objects capture | `docs/screenshots/s3-root-objects.png` | Correct root-level keys, including `index.html`, illustrating the troubleshooting resolution |

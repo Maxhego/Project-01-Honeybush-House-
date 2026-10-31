@@ -69,7 +69,7 @@ The [test record](docs/testing.md) separates reported historical outcomes from c
 
 The highest-priority additions are:
 
-1. The 20 original website image files are included in [`images/`](images/), with all HTML and CSS image references matched to committed files. Add an asset-origin note documenting sources and usage rights.
+1. The 20 website image files are included in [`images/`](images/), and all HTML/CSS image paths resolve. The [asset-provenance record](docs/asset-provenance.md) inventories supplied files, AI-assisted work and project content; image sources and usage rights remain unverified.
 2. Desktop captures are now available in the [screenshot gallery](docs/screenshots/README.md). Add a mobile capture with viewport details; preserve clear environment labels.
 3. Add dated deployment evidence: S3 root objects, CloudFront origin/OAC and root object, and a completed invalidation.
 4. Add recorded HTTPS/HTTP and private-S3 checks, with dates and expected versus actual results, if historical records exist or an authorized future deployment is tested.
@@ -89,6 +89,7 @@ The website source includes its 20 image assets in `images/`. Keep this folder a
 | [Architecture](docs/architecture.md) | Documented manually deployed design |
 | [Testing](docs/testing.md) | Reported outcomes and pending verification |
 | [Security and cost](docs/security-and-cost.md) | Controls to verify and cost considerations |
+| [Asset provenance](docs/asset-provenance.md) | 20-file inventory; image origins and usage rights unresolved |
 | [Portfolio evidence](docs/portfolio-evidence.md) | Prioritized gaps and capture guidance |
 | [CloudFormation example](infra/README.md) | Not deployed or account-validated; creates a separate new stack |
 | [GitHub Actions guide](docs/deployment-automation.md) | Manual-dispatch example, not configured or tested; no runs found at review |
@@ -102,4 +103,4 @@ The existing deployment was completed through the AWS Console. The template and 
 - How cached responses affect deployment troubleshooting.
 - How to distinguish a successful manual demonstration from reproducible, recorded validation.
 
-Next priorities are deployment evidence and asset provenance, followed by testing the prepared automation in a separately reviewed deployment. Custom domains, monitoring and a serverless contact form are future extensions.
+Next priorities are deployment evidence and verification of asset sources and usage rights, followed by testing the prepared automation in a separately reviewed deployment. Custom domains, monitoring and a serverless contact form are future extensions.
